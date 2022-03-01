@@ -1,0 +1,2 @@
+python3 sqlmap_auto_proxy.py
+pause

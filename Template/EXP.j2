@@ -1,0 +1,79 @@
+from util.ExpRequest import ExpRequest,Output
+from operator import methodcaller
+import prettytable as pt
+"""
+import util.globalvar as GlobalVar
+from ClassCongregation import ysoserial_payload,Dnslog
+DL = Dnslog()
+DL.dns_host()
+DL.result()
+"""
+class {{service.entry_nodes.vulname}}():
+    def __init__(self, **env):
+        """
+        基础参数初始化
+        """
+        self.url = env.get('url')
+        self.cookie = env.get('cookie')
+        self.cmd = env.get('cmd')
+        self.pocname = env.get('pocname')
+        self.vuln = env.get('vuln')
+        self.timeout = int(env.get('timeout'))
+        self.retry_time = int(env.get('retry_time'))
+        self.retry_interval = int(env.get('retry_interval'))
+        self.status = env.get('status')
+            
+    def {{service.entry_nodes.cvename}}(self):
+        appName = '{{service.entry_nodes.vulname}}'
+        pocname = '{{service.entry_nodes.cvename}}'
+        path = '{{service.header_nodes.headinfo.path}}'
+        method = '{{service.header_nodes.headinfo.method}}'
+        desc = '{{service.entry_nodes.infoname}} {{service.entry_nodes.banner}}'
+        data = '{{service.header_nodes.content.data}}'
+        headers = {{service.header_nodes.headinfo.header}}
+        #输出类
+        output = Output(pocname)
+        #请求类
+        exprequest = ExpRequest(pocname, output)
+        try:
+            if self.vuln == 'False':
+                r = exprequest.{{service.header_nodes.headinfo.method}}(self.url+path, data=data, headers=headers, retry_time=self.retry_time, retry_interval=self.retry_interval, timeout=self.timeout, verify=False)
+                {{service.entry_nodes.condition}}
+                    self.status = 'success'
+                    output.no_echo_success(method, desc)
+                else:
+                    output.fail()
+            else:
+                result = exprequest.{{service.header_nodes.headinfo.method}}(self.url+path, data=data, headers=headers, retry_time=self.retry_time, retry_interval=self.retry_interval, timeout=self.timeout, verify=False).text
+                print(result)
+        except Exception as error:
+            output.error_output(str(error))
+
+tb = pt.PrettyTable()
+tb.field_names = ['Target type', 'Vuln Name', 'Impact Version && Vulnerability description']
+tb.align['Target type'] = 'l'
+tb.align['Vuln Name'] = 'l'
+tb.align['Impact Version && Vulnerability description'] = 'l'
+tb.add_row([
+    "{{service.entry_nodes.vulname}}",
+    "{{service.entry_nodes.cvename}}",
+    "{{service.entry_nodes.infoname}} {{service.entry_nodes.banner}}"
+])
+print(tb)
+
+def check(**kwargs):
+    result_list = []
+    result_list.append('----------------------------')
+    Exp{{service.entry_nodes.vulname}} = {{service.entry_nodes.vulname}}(**kwargs)
+    if kwargs['pocname'] != 'ALL':
+        func = getattr(Exp{{service.entry_nodes.vulname}}, kwargs['pocname'])#返回对象函数属性值，可以直接调用
+        func()#调用函数
+        return Exp{{service.entry_nodes.vulname}}.status
+    else:#调用所有函数
+        for func in dir({{service.entry_nodes.vulname}}):
+            if not func.startswith("__"):
+                methodcaller(func)(Exp{{service.entry_nodes.vulname}})
+                result_list.append(func+' -> '+Exp{{service.entry_nodes.vulname}}.status)
+                Exp{{service.entry_nodes.vulname}}.status = 'fail'
+    result_list.append('----------------------------')
+    return '\n'.join(result_list)

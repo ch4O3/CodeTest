@@ -1,0 +1,101 @@
+<html><head>
+
+ 
+
+<title>Uploader</title>
+
+ 
+
+<script src="http://www.cssbyy.com/editor/kindeditor.js"></script>
+
+ 
+
+<script>
+
+ 
+
+KindEditor.ready(function(K) {
+
+ 
+
+var uploadbutton = K.uploadbutton({
+
+ 
+
+button : K('#uploadButton')[0],
+
+ 
+
+fieldName : 'imgFile',
+
+ 
+
+url : 'http://www.cssbyy.com/editor/asp/upload_json.asp?dir=file',
+
+ 
+
+afterUpload : function(data) {
+
+ 
+
+if (data.error === 0) {
+
+ 
+
+var url = K.formatUrl(data.url, 'absolute');
+
+ 
+
+K('#url').val(url);}
+
+ 
+
+},
+
+ 
+
+});
+
+ 
+
+uploadbutton.fileBox.change(function(e) {
+
+ 
+
+uploadbutton.submit();
+
+ 
+
+});
+
+ 
+
+});
+
+ 
+
+</script></head><body>
+
+ 
+
+<div class="upload">
+
+ 
+
+<input class="ke-input-text" type="text" id="url" value="" readonly="readonly" />
+
+ 
+
+<input type="button" id="uploadButton" value="Upload" />
+
+ 
+
+</div>
+
+ 
+
+</body>
+
+ 
+
+</html>

