@@ -8,3 +8,4 @@ pycryptodome==3.10.1
 jinja2==3.0.3
 requests_toolbelt==0.9.1
 openpyxl==3.0.9
+ajpy==0.0.5
