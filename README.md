@@ -85,9 +85,9 @@ def check(**kwargs):
 ```
 
 
-### :clipboard:功能界面介绍
+### :clipboard:功能界面
 #### 漏洞扫描界面
-![漏洞扫描界面](https://github.com/codeyso/CodeTest/blob/master/img/1.png "漏洞扫描界面")
+![漏洞扫描界面](https://github.com/codeyso/CodeTest/blob/main/img/1.png "漏洞扫描界面")
 
 ### :open_file_folder:使用示例
 >案例参考：https://mp.weixin.qq.com/s/xwh81ZeE0Lgx-iIpqZI1_g
