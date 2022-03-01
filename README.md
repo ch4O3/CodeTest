@@ -1,6 +1,5 @@
 <h1 align="center" >Welcome to CodeTest</h1>
 
-
 ### :point_right:关于本项目
 
 >本项目的主要目的: 针对日常收集的Python POC\EXP测试脚本，使用可视化界面统一执行入口，方便运行。
@@ -70,7 +69,7 @@ def check(**kwargs):
 	url = kwargs['url']#/*str*/
 	print('输出结果')
 	print(url)
-	'''此处的返回状态码用与批量验证
+	'''此处的返回状态码用于批量验证
 	if True:
 		return 1
 	else:
@@ -86,7 +85,7 @@ def check(**kwargs):
 ```
 
 
-### :clipboard:界面介绍
+### :clipboard:功能界面介绍
 #### 漏洞扫描界面
 ![漏洞扫描界面](https://github.com/codeyso/CodeTest/blob/master/img/1.png "漏洞扫描界面")
 
