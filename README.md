@@ -31,6 +31,7 @@ cd CodeTest
 pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 注意: ~\Python3\Lib\site-packages，找到这个路径，下面有一个文件夹叫做crypto,将小写c改成大写C
 注意: 建议安装之前更新pip (python -m pip install --upgrade pip)
+
 (三)使用工具
 1) 双击 CodeTest.bat
 2) pythonw3 -B CodeTest.pyw
